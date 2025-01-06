@@ -34,7 +34,18 @@ namespace PicView
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Aktuelle Versionsnummer auslesen
+            var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
+            if (version != null)
+            {
+                // Build- und Revisionsnummer extrahieren
+                labelBuildRevision.Text = $"Build: {version.Build}, Revision: {version.Revision}";
+            }
+            else
+            {
+                labelBuildRevision.Text = "Version nicht verfügbar";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -168,6 +179,11 @@ namespace PicView
         }
 
         private void labelFilename_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

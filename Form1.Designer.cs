@@ -40,6 +40,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.labelFilename = new System.Windows.Forms.Label();
+            this.labelBuildRevision = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -162,12 +163,26 @@
             this.labelFilename.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelFilename.Click += new System.EventHandler(this.labelFilename_Click);
             // 
+            // labelBuildRevision
+            // 
+            this.labelBuildRevision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelBuildRevision.AutoSize = true;
+            this.labelBuildRevision.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.labelBuildRevision.Location = new System.Drawing.Point(639, 489);
+            this.labelBuildRevision.Name = "labelBuildRevision";
+            this.labelBuildRevision.Size = new System.Drawing.Size(24, 16);
+            this.labelBuildRevision.TabIndex = 7;
+            this.labelBuildRevision.Text = "v.0";
+            this.labelBuildRevision.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelBuildRevision.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(820, 510);
+            this.Controls.Add(this.labelBuildRevision);
             this.Controls.Add(this.labelFilename);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -200,6 +215,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem kopierenToolStripMenuItem;
         private System.Windows.Forms.Label labelFilename;
+        private System.Windows.Forms.Label labelBuildRevision;
     }
 }
 
