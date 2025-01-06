@@ -34,17 +34,16 @@ namespace PicView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Aktuelle Versionsnummer auslesen
-            var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-
-            if (version != null)
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
-                // Build- und Revisionsnummer extrahieren
-                labelBuildRevision.Text = $"Build: {version.Build}, Revision: {version.Revision}";
+                // ClickOnce-Version abrufen
+                var version = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+
+                labelBuildRevision.Text = $"Version: {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
             }
             else
             {
-                labelBuildRevision.Text = "Version nicht verfügbar";
+                labelBuildRevision.Text = "Lokal gestartet - keine ClickOnce-Version verfügbar";
             }
         }
 
