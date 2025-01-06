@@ -17,6 +17,8 @@ namespace PicView
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
+
             // Argumente an Form1 übergeben
             Application.Run(new Form1(args));
         }
