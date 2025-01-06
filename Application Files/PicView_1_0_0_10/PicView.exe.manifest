@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PicView.exe" version="1.0.0.10" publicKeyToken="f80d05508586bf98" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="picViewer_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PicView" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PicView.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC-Manifestoptionen
+          Wenn Sie die Zugangsebene für das Windows-Benutzerkonto ändern möchten, ersetzen Sie den 
+          requestedExecutionLevel-Knoten durch eines der folgenden Elemente.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Löschen Sie den requestedExecutionLevel-Knoten, wenn Sie 
+         zum Gewährleisten der Abwärtskompatibilität die Datei- und Registrierungsvirtualisierung verwenden möchten.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PicView.exe" size="661952">
+      <assemblyIdentity name="PicView" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>FoNz4aEw76Q5WUqn/MAl7u/ojLSdPrDkRTantO9tNws=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="PicView.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="picViewer_icon.ico" size="62527">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>l/LOjmaIIRC5/XUbdQrx6hS988o9yz16We/1/jLSjec=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=PREDATOR\Manuel" issuerKeyHash="2ed6c892facf6397c78d5ae83f3d8700b8985828" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>tnlav3sdjmcEGrbPaqAQvsjz8HC/UlnvknQoDnn/FgY=</DigestValue></Reference></SignedInfo><SignatureValue>Tqk5Tj0nS5e8dF+HAH8HQaXA2srW8mSK9uLJFWiuKlaNbi5sAI5nM0hJYze+2rcMYLwXHvJ556ew0e1igy3sUGvg8KauGYo514PsGmUoKDXycdte387NcoU6f7UD2LtzVd2yGxpkRjjHzDrXQEdzpQeKElojz+uioB10E9sAgPk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>rbT2G1E8U2ODNaYHFwyDchH6/n1445PPoKcSHdezexrkC3SekCvm74hBSk3HNaog3l7N/b0pTKCERPGZdhcfGliVeofzLm3fQiuZHep3mblwg5B4umUChCIeQq1IMDmlwW7YfxZaHma0YU4JQ38YsZwcGLHtiSCu8XY2CmOkImU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0616ff790e287492ef5952bf70f0f3c8be10a06acfb61a04678e1d7bbf5a79b6" Description="" Url=""><as:assemblyIdentity name="PicView.exe" version="1.0.0.10" publicKeyToken="f80d05508586bf98" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=PREDATOR\Manuel</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dYXVQbZ7t+j/W2uGgq4AmNdrwatGLZeNac0HfkXSNoI=</DigestValue></Reference></SignedInfo><SignatureValue>ej2O6tTLWqVY/ybdbFxK4QexHp6E+a0XmXqNjcZCCet4SygLXenwiX4wVKpnq2MXXtMD3u7h7TDqgnpvtD6UFkE+22AIovlo7JNBhz/0EQN6Jqq0A/WV/LhCKCV41lx3EoVLEHvyfXs+JniFH14QgKqfHGdlJK+hUXYViXu1ecc=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>rbT2G1E8U2ODNaYHFwyDchH6/n1445PPoKcSHdezexrkC3SekCvm74hBSk3HNaog3l7N/b0pTKCERPGZdhcfGliVeofzLm3fQiuZHep3mblwg5B4umUChCIeQq1IMDmlwW7YfxZaHma0YU4JQ38YsZwcGLHtiSCu8XY2CmOkImU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQHks70bB0bIlFTh12tqv6AzANBgkqhkiG9w0BAQsFADApMScwJQYDVQQDHh4AUABSAEUARABBAFQATwBSAFwATQBhAG4AdQBlAGwwHhcNMjUwMTA2MTA0MTE2WhcNMjYwMTA2MTY0MTE2WjApMScwJQYDVQQDHh4AUABSAEUARABBAFQATwBSAFwATQBhAG4AdQBlAGwwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAK209htRPFNjgzWmBxcMg3IR+v59eOOTz6CnEh3Xs3sa5At0npAr5u+IQUpNxzWqIN5ezf29KUyghETxmXYXHxpYlXqH8y5t30IrmR3qd5m5cIOQeLplAoQiHkKtSDA5pcFu2H8WWh5mtGFOCUN/GLGcHBix7YkgrvF2NgpjpCJlAgMBAAEwDQYJKoZIhvcNAQELBQADgYEATMBj6atemD6D6bMAsi4hRFB+c1n6mmep2g2MhirCZzoHEd+kkENl2k8zl0BnBC5o1DtZRwIX4Je4y++l/9TDA/dPYHt5Cl/g1Q7DOo5U1Yd0rbYQjE+sGvSAKtC7qYiH3Vu8XlZIPhtOa/A73ecT0o2ftezNEmyQsGuo5IvSUFs=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
