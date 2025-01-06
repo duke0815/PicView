@@ -26,12 +26,12 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://duke0815.github.io/PicView/publish/</InstallUrl>
-    <UpdateUrl>https://github.com/duke0815/PicView/tree/release/publish/</UpdateUrl>
+    <UpdateUrl>https://duke0815.github.io/PicView/publish/</UpdateUrl>
     <SupportUrl>https://www.mk-cs.at</SupportUrl>
     <ErrorReportUrl>https://www.mk-cs.at</ErrorReportUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
