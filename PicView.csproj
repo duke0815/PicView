@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://duke0815.github.io/PicView/publish/</InstallUrl>
-    <UpdateUrl>https://duke0815.github.io/PicView/</UpdateUrl>
+    <UpdateUrl>https://duke0815.github.io/PicView/publish/</UpdateUrl>
     <SupportUrl>https://www.mk-cs.at</SupportUrl>
     <ErrorReportUrl>https://www.mk-cs.at</ErrorReportUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
