@@ -26,7 +26,7 @@ namespace PicView
             // KeyPreview aktivieren
             this.KeyPreview = true;
             this.PreviewKeyDown += Form1_PreviewKeyDown; // PreviewKeyDown-Ereignis abonnieren
-            this.KeyDown += Form1_KeyDown; // KeyDown bleibt für die Verarbeitung
+            //this.KeyDown += Form1_KeyDown; // KeyDown bleibt für die Verarbeitung
 
             // Prüfen, ob ein Argument (Dateipfad) übergeben wurde
             if (args.Length > 0 && File.Exists(args[0]))
@@ -63,11 +63,7 @@ namespace PicView
 
         private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            // Pfeiltasten als Eingabetasten markieren
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.Right)
-            {
-                e.IsInputKey = true; // Markiert die Tasten als "Eingabe"
-            }
+
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -97,9 +93,18 @@ namespace PicView
                 {
                     try
                     {
+                        // Bild im PictureBox freigeben
+                        if (pictureBox.Image != null)
+                        {
+                            pictureBox.Image.Dispose();
+                            pictureBox.Image = null;
+                        }
+
+                        // Datei löschen
                         File.Delete(currentImagePath);
-                        MessageBox.Show("Bild wurde gelöscht.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        button4_Click(null, EventArgs.Empty); // Nächstes Bild anzeigen
+
+                        // Nächstes Bild anzeigen oder PictureBox leeren
+                        button4_Click(null, EventArgs.Empty);
                     }
                     catch (Exception ex)
                     {
@@ -157,30 +162,29 @@ namespace PicView
             // Aktuelles Bild freigeben, falls vorhanden
             if (pictureBox.Image != null)
             {
-                pictureBox.BackgroundImage = null;
-                pictureBox.Image.Dispose(); // Bild freigeben
-                pictureBox.Image = null;    // Referenz löschen
+                pictureBox.Image.Dispose();
+                pictureBox.Image = null;
             }
 
+            // Bild aus Datei in einen MemoryStream laden
+            using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+            {
+                Image img = Image.FromStream(fs);
+                pictureBox.Image = new Bitmap(img);
+            }
+
+            // Pfad des aktuellen Bildes speichern
             currentImagePath = path;
 
-            // Alphabetischen Index aktualisieren
+            // `currentIndex` aktualisieren
             if (imageFiles != null)
             {
-                imageFiles = imageFiles.OrderBy(f => f).ToArray(); // Alphabetisch sortieren
                 currentIndex = Array.IndexOf(imageFiles, path);
             }
 
-            zoomFactor = 1.0f; // Zoom zurücksetzen
-
-            // Neues Bild laden
-            pictureBox.Image = Image.FromFile(path);
-
+            // Dateiname im Label anzeigen
             labelFilename.Text = Path.GetFileName(path);
         }
-
-
-
 
 
         private void LoadImagesInFolder(string folderPath)
@@ -218,13 +222,26 @@ namespace PicView
         {
             if (imageFiles != null && currentIndex < imageFiles.Length - 1)
             {
-                LoadImage(imageFiles[++currentIndex]); // Lade das nächste Bild basierend auf dem aktuellen Index
+                do
+                {
+                    currentIndex++;
+                } while (currentIndex < imageFiles.Length && !File.Exists(imageFiles[currentIndex]));
+
+                if (currentIndex < imageFiles.Length)
+                {
+                    LoadImage(imageFiles[currentIndex]);
+                }
+                else
+                {
+                    //MessageBox.Show("Keine weiteren Bilder vorhanden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Keine weiteren Bilder vorhanden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Keine weiteren Bilder vorhanden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
 
 
@@ -232,13 +249,26 @@ namespace PicView
         {
             if (imageFiles != null && currentIndex > 0)
             {
-                LoadImage(imageFiles[--currentIndex]); // Lade das vorherige Bild basierend auf dem aktuellen Index
+                do
+                {
+                    currentIndex--;
+                } while (currentIndex >= 0 && !File.Exists(imageFiles[currentIndex]));
+
+                if (currentIndex >= 0)
+                {
+                    LoadImage(imageFiles[currentIndex]);
+                }
+                else
+                {
+                    //MessageBox.Show("Keine vorherigen Bilder vorhanden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Keine vorherigen Bilder vorhanden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Keine vorherigen Bilder vorhanden.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
 
 
 
