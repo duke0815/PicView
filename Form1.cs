@@ -31,6 +31,18 @@ namespace PicView
             // Prüfen, ob ein Argument (Dateipfad) übergeben wurde
             if (args.Length > 0 && File.Exists(args[0]))
             {
+                if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+                {
+                    // ClickOnce-Version abrufen
+                    var version = System.Deployment.Application.ApplicationDeployment.CurrentDeployment.CurrentVersion;
+
+                    labelBuildRevision.Text = $"Version: {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
+                }
+                else
+                {
+                    labelBuildRevision.Text = "Lokal gestartet - keine ClickOnce-Version verfügbar";
+                }
+
                 pictureBox.BackgroundImage = null;
                 LoadImage(args[0]); // Lade das Bild
                 LoadImagesInFolder(Path.GetDirectoryName(args[0])); // Lade alle Bilder im Ordner
