@@ -89,6 +89,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(166, 32);
             this.button1.TabIndex = 1;
+            this.button1.TabStop = false;
             this.button1.Text = "Öffnen";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -103,6 +104,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(166, 32);
             this.button2.TabIndex = 2;
+            this.button2.TabStop = false;
             this.button2.Text = "Drehen";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -117,6 +119,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(166, 32);
             this.button3.TabIndex = 3;
+            this.button3.TabStop = false;
             this.button3.Text = "Spiegeln";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -131,6 +134,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(92, 32);
             this.button4.TabIndex = 4;
+            this.button4.TabStop = false;
             this.button4.Text = "nächstes";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -145,6 +149,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(92, 32);
             this.button5.TabIndex = 5;
+            this.button5.TabStop = false;
             this.button5.Text = "vorheriges";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -168,7 +173,7 @@
             this.labelBuildRevision.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBuildRevision.AutoSize = true;
             this.labelBuildRevision.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.labelBuildRevision.Location = new System.Drawing.Point(639, 489);
+            this.labelBuildRevision.Location = new System.Drawing.Point(705, 489);
             this.labelBuildRevision.Name = "labelBuildRevision";
             this.labelBuildRevision.Size = new System.Drawing.Size(24, 16);
             this.labelBuildRevision.TabIndex = 7;
@@ -196,6 +201,8 @@
             this.Name = "Form1";
             this.Text = "PicViewer";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.Form1_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
